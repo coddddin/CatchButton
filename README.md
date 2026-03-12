@@ -29,3 +29,16 @@
 <img width="458" height="416" alt="11" src="https://github.com/user-attachments/assets/acb823b1-aa2e-4821-a2fc-2a4a1b7b8126" />
 
 <img width="478" height="480" alt="12" src="https://github.com/user-attachments/assets/a43a54be-2f7a-405c-beb7-45a1a5bda863" />
+
+ 2단계: 시각적/청각적피드백
+
+• 목표
+1. 버튼을 잡았을 때와 놓쳤을 때 시청각 피드백을 주기
+
+<img width="781" height="476" alt="성공시 팝업" src="https://github.com/user-attachments/assets/cd615de9-226e-42ee-878f-3752c74cf976" />
+
+ -- 효과음은 따로 코드로 표현 -- 
+<img width="219" height="48" alt="잡았 " src="https://github.com/user-attachments/assets/912bf376-15e7-4737-b9ba-c516cfb72605" />
+
+<img width="459" height="100" alt="ee" src="https://github.com/user-attachments/assets/09684118-02b3-4a67-b923-2f044a3f7be4" />
+

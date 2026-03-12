@@ -42,7 +42,6 @@
             runbutton.Text = "\" 나를 잡아봐 \"";
             runbutton.UseVisualStyleBackColor = false;
             runbutton.Click += runbutton_Click;
-            runbutton.MouseDown += runbutton_MouseDown;
             runbutton.MouseEnter += runbutton_MouseEnter;
             // 
             // Form1

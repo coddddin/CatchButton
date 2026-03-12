@@ -20,25 +20,40 @@
 
 
 ## 실행화면
- 1단계: 기본 도망 기능
+ # 1단계: 기본 도망 기능
 
 • 목표
-1. 버튼 컨트롤 영역 안으로 마우스가 들어가면 버튼을 랜덤 위치로 이동시킴
-2. 좌표를 폼 제목에 추가
+
+         1. 버튼 컨트롤 영역 안으로 마우스가 들어가면 버튼을 랜덤 위치로 이동시킴
+         2. 좌표를 폼 제목에 추가
 
 <img width="458" height="416" alt="11" src="https://github.com/user-attachments/assets/acb823b1-aa2e-4821-a2fc-2a4a1b7b8126" />
 
 <img width="478" height="480" alt="12" src="https://github.com/user-attachments/assets/a43a54be-2f7a-405c-beb7-45a1a5bda863" />
 
- 2단계: 시각적/청각적피드백
+ 
+ 
+ # 2단계: 시각적/청각적피드백
 
 • 목표
-1. 버튼을 잡았을 때와 놓쳤을 때 시청각 피드백을 주기
+
+         1. 버튼을 잡았을 때와 놓쳤을 때 시청각 피드백을 주기
 
 <img width="781" height="476" alt="성공시 팝업" src="https://github.com/user-attachments/assets/cd615de9-226e-42ee-878f-3752c74cf976" />
 
  -- 효과음은 따로 코드로 표현 -- 
+
 <img width="219" height="48" alt="잡았 " src="https://github.com/user-attachments/assets/912bf376-15e7-4737-b9ba-c516cfb72605" />
 
 <img width="459" height="100" alt="ee" src="https://github.com/user-attachments/assets/09684118-02b3-4a67-b923-2f044a3f7be4" />
 
+ # 3단계– 점수 표시와 점수별 난이도 조정
+
+• 목표
+          
+         1. 점수를 계산하여 표시하기 (점수 시스템 추가)
+         2.게임이 점점 어려워지도록 만들기 (크기 10%축소)
+
+<img width="285" height="27" alt="점수" src="https://github.com/user-attachments/assets/2d4c4f68-60ec-437f-a74a-c66c37b5babc" />
+
+<img width="605" height="351" alt="줄어듬" src="https://github.com/user-attachments/assets/a473c642-318a-4592-ab04-debe00133e7a" />

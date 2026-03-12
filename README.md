@@ -20,9 +20,12 @@
 
 
 ## 실행화면
--1단계: 기본 도망 기능
+ 1단계: 기본 도망 기능
 
- • 목표
-§ 버튼 컨트롤 영역 안으로 마우스가 들어가면 버튼을 랜덤 위치로 이동시킴
+• 목표
+1. 버튼 컨트롤 영역 안으로 마우스가 들어가면 버튼을 랜덤 위치로 이동시킴
+2. 좌표를 폼 제목에 추가
+
 <img width="458" height="416" alt="11" src="https://github.com/user-attachments/assets/acb823b1-aa2e-4821-a2fc-2a4a1b7b8126" />
+
 <img width="478" height="480" alt="12" src="https://github.com/user-attachments/assets/a43a54be-2f7a-405c-beb7-45a1a5bda863" />

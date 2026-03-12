@@ -28,28 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            runbutton = new Button();
             SuspendLayout();
             // 
-            // button1
+            // runbutton
             // 
-            button1.BackColor = SystemColors.ButtonShadow;
-            button1.Font = new Font("함초롬돋움", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            button1.Location = new Point(279, 183);
-            button1.Name = "button1";
-            button1.Size = new Size(200, 50);
-            button1.TabIndex = 0;
-            button1.Text = "\" 나를 잡아봐 \"";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            button1.MouseEnter += button1_MouseEnter;
+            runbutton.BackColor = SystemColors.ButtonShadow;
+            runbutton.Font = new Font("함초롬돋움", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            runbutton.Location = new Point(279, 183);
+            runbutton.Name = "runbutton";
+            runbutton.Size = new Size(200, 50);
+            runbutton.TabIndex = 0;
+            runbutton.Text = "\" 나를 잡아봐 \"";
+            runbutton.UseVisualStyleBackColor = false;
+            runbutton.Click += runbutton_Click;
+            runbutton.MouseDown += runbutton_MouseDown;
+            runbutton.MouseEnter += runbutton_MouseEnter;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(783, 450);
-            Controls.Add(button1);
+            Controls.Add(runbutton);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
@@ -58,6 +59,6 @@
 
         #endregion
 
-        private Button button1;
+        private Button runbutton;
     }
 }

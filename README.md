@@ -57,3 +57,15 @@
 <img width="285" height="27" alt="점수" src="https://github.com/user-attachments/assets/2d4c4f68-60ec-437f-a74a-c66c37b5babc" />
 
 <img width="605" height="351" alt="줄어듬" src="https://github.com/user-attachments/assets/a473c642-318a-4592-ab04-debe00133e7a" />
+ 
+ -- 줄어들어 크기가 작아진 모습 --
+
+ # 4단계– 게임오버 및 리셋
+
+• 목표
+
+          1. 게임오버 표시하기 ( 놓친 횟수를 폼 텍스트에 표시하여 20번 놓칠시 게임오버 창 팝업)
+          2. 재도전 버튼 만들기 (게임 오버 창에 생성하여 사용자가 선택하게 설정)
+
+<img width="196" height="146" alt="게임오버 다시하기" src="https://github.com/user-attachments/assets/b5de5c4d-1c51-489f-8459-a1991eda8e1e" />
+

@@ -12,10 +12,16 @@ namespace CatchButton
 
         // 점수 및 게임 설정
         private int score = 0;
+        private int missCount = 0;
         private const int ScoreHit = 100;
         private const int ScoreMiss = 10;
+        private const int MaxMisses = 20;
         private const double ShrinkFactor = 0.9;
         private readonly Size MinButtonSize = new Size(40, 20);
+
+        // 초기 상태 저장(다시시작에 사용)
+        private Size initialButtonSize;
+        private Point initialButtonLocation;
 
         public Form1()
         {
@@ -24,6 +30,10 @@ namespace CatchButton
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // 초기값 저장
+            initialButtonSize = runbutton.Size;
+            initialButtonLocation = runbutton.Location;
+
             UpdateTitle();
         }
 
@@ -35,6 +45,8 @@ namespace CatchButton
 
         private void HandleCatch()
         {
+            if (!runbutton.Enabled) return;
+
             // 잡았을 때 효과음
             SystemSounds.Asterisk.Play();
 
@@ -47,18 +59,21 @@ namespace CatchButton
             // 타이틀 갱신
             UpdateTitle();
 
-            // 메시지 박스
+            // 성공 메세지
             MessageBox.Show("축하합니다~!", "성공", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         // 마우스가 버튼에 들어갈 때(도망갈 때): 점수 감소, 버튼 이동, 효과음
         private void runbutton_MouseEnter(object sender, EventArgs e)
         {
+            if (!runbutton.Enabled) return;
+
             // 도망갈 때 효과음
             SystemSounds.Hand.Play();
 
-            // 점수 감소
+            // 점수 감소 및 놓친 횟수 증가
             score -= ScoreMiss;
+            missCount++;
 
             // 가용 영역 계산(버튼이 폼 테두리를 넘지 않게)
             int maxX = Math.Max(0, this.ClientSize.Width - runbutton.Width);
@@ -70,6 +85,61 @@ namespace CatchButton
             runbutton.Location = new Point(nextX, nextY);
 
             UpdateTitle();
+
+            // 게임 오버 체크
+            if (missCount >= MaxMisses)
+            {
+                OnGameOver();
+            }
+        }
+
+        // 게임 오버 처리: 메시지박스(다시시작 버튼 포함) 및 게임 비활성화
+        private void OnGameOver()
+        {
+            // 게임오버 효과음
+            SystemSounds.Exclamation.Play();
+
+            var result = MessageBox.Show(
+                "Game Over?",
+                "Game Over~",
+                MessageBoxButtons.RetryCancel,
+                MessageBoxIcon.Stop);
+
+            if (result == DialogResult.Retry)
+            {
+                ResetGame();
+            }
+            else
+            {
+                DisableGamePlay();
+            }
+        }
+
+        // 게임 관련 컨트롤 비활성화 (플레이 불가 상태)
+        private void DisableGamePlay()
+        {
+            runbutton.Enabled = false;
+            // 필요하면 다른 게임 관련 컨트롤도 비활성화
+            // 단, '다시시작' 버튼은 사용자가 재시작하도록 활성화 상태로 둠
+        }
+
+        // 게임 정보 초기화 및 재시작
+        private void ResetGame()
+        {
+            score = 0;
+            missCount = 0;
+
+            runbutton.Size = initialButtonSize;
+            runbutton.Location = initialButtonLocation;
+            runbutton.Enabled = true;
+
+            UpdateTitle();
+        }
+
+        // '다시시작' 버튼을 폼에 두었고 클릭 시 이 핸들러가 실행됩니다.
+        private void restartButton_Click(object sender, EventArgs e)
+        {
+            ResetGame();
         }
 
         // 버튼을 10% 축소, 최소 크기 보장 및 폼 영역 밖으로 벗어나지 않도록 보정
@@ -90,10 +160,10 @@ namespace CatchButton
             runbutton.Location = new Point(Math.Max(0, left), Math.Max(0, top));
         }
 
-        // 폼 타이틀에 점수(및 버튼 좌표)를 표시
+        // 폼 타이틀에 점수, 놓친 횟수 및 버튼 좌표를 표시
         private void UpdateTitle()
         {
-            this.Text = $"점수: {score}    버튼위치: ({runbutton.Location.X}, {runbutton.Location.Y})";
+            this.Text = $"점수: {score}    놓친횟수: {missCount}/{MaxMisses}    버튼위치: ({runbutton.Location.X}, {runbutton.Location.Y})";
         }
     }
 }
